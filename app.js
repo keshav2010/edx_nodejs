@@ -58,6 +58,7 @@ const convertCSV = function(fileName = process.argv[2])
     reader.on('end', ()=>{
       //all lines are read, file closed
       console.log("end of file : " + jsonArray.length);
+      fs.writeFileSync('customer-data.json', JSON.stringify(jsonArray));
     });
     return jsonArray;
 }
